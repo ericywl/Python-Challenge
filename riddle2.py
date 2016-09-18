@@ -1222,17 +1222,25 @@ $#_}*!(+([_&%{^&[([%]}*^{{([@+@]@*&@_!]_+([(#&!]]#$$#]@#{_]][_{@]{*))$({%}_![@$]
 }!)$]&($)@](+(#{$)_%^%_^^#][{*[)%}+[##(##^{$}^]#&(&*{)%)&][&{]&#]}[[^^&[!#}${@_(
 #@}&$[[%]_&$+)$!%{(}$^$}*"""
 
-freq = Counter(text)
+freq = Counter(text) # count the frequency of appearance of each character in text
 textlist = []
-index = []
+ti = []
 
 for v, k in freq.items():
 	if k == 1:
 		textlist.append(v)
+
+# append those characters that have appeared only once to textlist
 			
 for z in textlist:
-	index.append(text.index(z))
+	ti.append(text.index(z))
 
-data = dict(zip(textlist, index))
+# append the index of characters in text to ti
 
-print(sorted(data, key=data.get))
+data = dict(zip(textlist, ti))
+
+# map textlist and ti together
+
+print("".join(sorted(data, key=data.get)))
+
+# sort textlist according to the order of occurence and join them into a string

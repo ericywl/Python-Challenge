@@ -1249,8 +1249,12 @@ dCdFLtBQPtFQuCdKOrpndJNUFQIDSbetUKylhSUjcDVtbiQrWMRQhAwGUZyPneCGUjGBBTkLqxLAXXtB
 KfErkDaWMFZZeuqDmXKJEGHyToPUhPphfVhgUZgbIuRAtWnroImpJKqqmEZqeNQCKzhjIkKQHURWLXFw
 PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd"""
 
-import re
+import re # regex
 
 textlist = re.findall("[^A-Z]+[A-Z]{3}([a-z])[A-Z]{3}[^A-Z]+", text)
 
+# find all lowercase alphabets in text that are surrounded by exactly three uppercase alphabets on each side
+
 print("".join(textlist))
+
+# join textlist into a string
