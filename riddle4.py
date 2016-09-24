@@ -1,9 +1,11 @@
 import urllib.request
 import re
 
-website = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345'
+website = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=8022'
 
-while True:
+flag = True
+
+while flag:
 	with urllib.request.urlopen(website) as response: 
 		php = response.read()								# read website and store bytes_info in php
 		decphp = php.decode('UTF-8')						# decode php into UTF-8
@@ -15,11 +17,14 @@ while True:
 			new_website = core + num
 			website = new_website
 			print(website)
+		elif num == "":
+			flag = False
 		else: 
 			new_website = core + num
 			website = new_website
 			print(website)
 
 # if the num = "16044", divide the number by 2 and concatenate the number to core
+# else if there's no number, stop loop
 # else just concatenate the number to core
 
